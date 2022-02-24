@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/form-elements.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+
+    <link rel="shortcut icon" href="Dapp/assets/ico/favicon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <title>区块链竞标拍卖系统</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-no-bg" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Bootstrap Multi Step Registration Form Template</a>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="top-content">
+      
+      <div class="inner-bg">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 text">
+              <h1><strong>竞标拍卖系统</strong>  Competitive Bidding auction</h1>
+              <div class="description">
+                <p>
+                  实现链上拍卖商品 <a href="#"><strong>Advanced</strong></a>, enjoy！
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-sm-offset-3 form-box">
+              
+              <form role="form" action="" method="post" class="registration-form">
+                
+                <fieldset>
+                  <div class="form-top">
+                    <div class="form-top-left">
+                      <h3>Step 1 / 4</h3>
+                      <p>成为一名卖家:</p>
+                    </div>
+                    <div class="form-top-right">
+                      <i class="fa fa-dropbox"></i>
+                    </div>
+                  </div>
+                  <div class="form-bottom">
+                    <div class="form-group">
+                      <input type="text" id="ProductName" onFocus="this.value=''" placeholder="The Product you sell" value="您想要出售的产品">
+                    </div>
+                    <div class="form-group">
+                      <textarea id="ProductDesc" onFocus="this.value=''" placeholder="About product..." >描述您的商品使其更有竞争力</textarea>
+                    </div>
+                    <button type="button" class="btn btn-next">下一步</button>
+                    <a type="button" onClick="return false;" class="btn btn-next">我不需要上架商品</a>
+                  </div>
+                </fieldset>
+                
+                <fieldset>
+                  <div class="form-top">
+                    <div class="form-top-left">
+                      <h3>Step 2 / 4</h3>
+                      <p>准备您的拍卖:</p>
+                    </div>
+                    <div class="form-top-right">
+                      <i class="fa fa-dollar"></i>
+                    </div>
+                  </div>
+                  <div class="form-bottom">
+                    <div class="form-group">
+                      <input type="text" onFocus="this.value=''" value="为您的商品定价" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9] /g,'')}else{this.value=this.value.replace(/\D/g,'')}" id="startPrice" placeholder="StartPrice">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" onFocus="this.value=''" value="为您的商品定义最低加价" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9] /g,'')}else{this.value=this.value.replace(/\D/g,'')}" id="MinimumBid" placeholder="MinimumBid">
+                    </div>
+                    <div class="form-group">
+                      <input list="daylist" onFocus="this.value=''" value="您的拍卖期望时间" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9] /g,'')}else{this.value=this.value.replace(/\D/g,'')}"  type="text" id="duration" placeholder="Duration">
+                      <datalist id="daylist">
+                        <option value="86400">一天</option>
+                        <option value="259200">三天</option>
+                        <option value="432000">五天</option>
+                        <option value="604800">七天</option>
+                        <option value="864000">十天</option>
+                      </datalist>
+                    </div>
+                    <button type="button" class="btn btn-previous">上一步</button>
+                    <button type="button" class="btn btn-next" id="Submission">上架产品</button>
+                    <a type="button" onClick="return false;" class="btn btn-next">我不需要上架商品</a>
+                  </div>
+                </fieldset>
+                
+                <fieldset>
+                  <div class="form-top">
+                    <div class="form-top-left">
+                      <h3>Step 3 / 4</h3>
+                      <p>查询一场拍卖:</p>
+                    </div>
+                    <div class="form-top-right">
+                      <i class="fa fa-cart-arrow-down"></i>
+                    </div>
+                  </div>
+                  <div class="form-bottom">
+                    <div class="form-group">
+                      <h5>当前最高出价者: <span class="showHighestBidder"></span></h5>
+        
+                    </div>
+
+                    <div class="form-group">
+                      <h5>当前最高出价: <span class="showHighestBid"></span></h5>
+                    </div>
+
+                    <div class="form-group">
+                      <h5>离拍卖结束还有 <span class="showRemainTime">xxx</span> 秒</h5>
+                    </div>
+
+                    <div class="form-group" style="padding-top:15px">
+                      <input type="text" onFocus="this.value=''" value="ProductId" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9] /g,'')}else{this.value=this.value.replace(/\D/g,'')}" id="ProductIdForBidInfo" placeholder="ProductId">
+                    </div>
+
+                    <button type="button" class="btn btn-previous">上一步</button>
+                    <button type="button" class="btn" id="GogetBidInfo">查询竞价情况</button>
+                    <a type="button" onClick="return false;" class="btn btn-next">前去结算</a>
+                  </div>
+                </fieldset>
+
+                <fieldset>
+                  <div class="form-top">
+                    <div class="form-top-left">
+                      <h3>Step 4 / 4</h3>
+                      <p>开始结算:</p>
+                    </div>
+                    <div class="form-top-right">
+                      <i class="fa fa-credit-card"></i>
+                    </div>
+                  </div>
+                  <div class="form-bottom">
+                    
+                    <div class="form-group" style="padding-button:30px">
+                      <h5>尊敬的用户: <span class="showAccount"></span></h5>
+                    </div>
+                    <button type="button" class="GetCurrentEthAccount01 btn">登录以结算</button>
+                    <div class="form-group" style="padding-top:30px">
+                      <input type="text" onFocus="this.value=''" value="ProductId" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9] /g,'')}else{this.value=this.value.replace(/\D/g,'')}" id="ProductIdForSettle" placeholder="ProductId">
+                    </div>
+                    <button type="button" class="btn btn-previous">上一步</button>
+                    <button type="button" class="btn" id="SeleteTheAuction">结算本次拍卖</button>
+                    <a type="button" onClick="return false;" class="btn btn-next">我想要竞拍</a>
+                  </div>
+                </fieldset>
+
+                <fieldset>
+                  <div class="form-top">
+                    <div class="form-top-left">
+                      <h3>Step 1 / 2</h3>
+                      <p>查询拍卖商品:</p>
+                    </div>
+                    <div class="form-top-right">
+                      <i class="fa fa-search"></i>
+                    </div>
+                  </div>
+                  <div class="form-bottom">
+                    
+                    <div class="form-group">
+                      <h5>现有商品数: <span class="showProductNum">件</span></h5>
+                    </div>
+
+                    <div class="form-group">
+                      <h5>商品名称: <span class="showProductName"></span></h5>
+                    </div>
+
+                    <div class="form-group">
+                      <h5>商品描述: <span class="showProductDesc"></span></h5>
+                    </div>
+
+                    <div class="form-group">
+                      <h5>起拍价: <span class="showStartPrice"></span></h5>
+                    </div>
+
+                    <div class="form-group">
+                      <h5>最低加价: <span class="showMinimunBid"></span></h5>
+                    </div>
+
+                    <div class="form-group">
+                      <h5>起拍时间: <span class="showStartTime"></span></h5>
+                    </div>
+
+                    <div class="form-group">
+                      <h5>结束时间: <span class="showEndTime"></span></h5>
+                    </div>
+
+                    <div class="form-group">
+                      <h5>拍卖受益人: <span class="showBeneficiary"></span></h5>
+                    </div>
+
+                    <div class="form-group">
+                      <input type="text" onFocus="this.value=''" value="ProductId" id="IdForProductInfo" placeholder="ProductId">
+                    </div>
+                    
+                    
+                    <button type="button" class="btn btn-previous">上一步</button>
+                    <button type="button" class="btn" id="GogetProductInfo">查询拍卖信息</button>
+                    <button type="button" class="btn btn-next">下一步</button>
+                  </div>
+                </fieldset>
+
+                <fieldset>
+                  <div class="form-top">
+                    <div class="form-top-left">
+                      <h3>Step 2 / 2</h3>
+                      <p>开始您的竞拍:</p>
+                    </div>
+                    <div class="form-top-right">
+                      <i class="fa fa-gavel"></i>
+                    </div>
+                  </div>
+                  <div class="form-bottom">
+                    
+                    <div class="form-group">
+                      <h5>尊敬的用户: <span class="showAccount"></span></h5>
+        
+                    </div>
+                    <div class="form-group">
+                      <h5>余额: <span class="showBalance"></span></h5>
+        
+                    </div>
+                    <div class="form-group">
+                      <input type="text" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9] /g,'')}else{this.value=this.value.replace(/\D/g,'')}" id="ProductId" placeholder="ProductId">
+                      <input type="text" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9] /g,'')}else{this.value=this.value.replace(/\D/g,'')}" id="value" placeholder="Your bid">
+                    </div>
+                    <button type="button" class="btn btn-previous">上一步</button>
+                    <button type="button" class="GetCurrentEthAccount02 btn">登录以拍卖</button>
+                    <button type="button" class="GetAccountBalance btn">查询余额</button>
+                    <button type="button" class="btn" id="BidSubmission">出价!</button>
+                  </div>
+                </fieldset>
+
+                
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+
+    </table>
+
+    <!-- Javascript -->
+    <script src="assets/js/jquery-1.11.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.backstretch.min.js"></script>
+    <script src="assets/js/retina-1.1.0.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+
+    
+    <!-- <script type="text/javascript" src="jquery.js"></script> -->
+    <script type="text/javascript" src="web3.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>
